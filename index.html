@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div id="display2">
+                <h1 style="font-size: 15px; text-align: center; color: rgb(255, 251, 251);;">DIU Calculator </h1>
+            </div>
+            <div id="display"></div>
+            <div class="buttons">
+                <div id="clear" class="button">C</div>
+                <div id="del" class="button span-del">DEL</div>
+                <div id="suq" class="button span-del">SUQ</div>
+                <div class="button">/</div>
+                <div class="button">7</div>
+                <div class="button">8</div>
+                <div class="button">9</div>
+                <div class="button">*</div>
+                <div class="button">4</div>
+                <div class="button">5</div>
+                <div class="button">6</div>
+                <div class="button ">-</div>
+                <div class="button">1</div>
+                <div class="button">2</div>
+                <div class="button">3</div>
+                <div class="button span-plus">+</div>
+                <div class="button">.</div>
+                <div class="button">0</div>
+                <div id="equal" class="button span-two">=
+                </div>
+            </div>
+            <div id="display2">
+                <h1 style="font-size: 15px; text-align: center; color: rgb(255, 253, 253);;">Md Yasin Arafat Shuvo </h1>
+            </div>
+        </div>
+        <div class="h1style">
+            <h1>Calculator 2023 Assignment HTML CSS & JS | 201-15-13706</h1>
+        </div>
+    </section>
+
+    <script>
+        let display = document.getElementById('display');
+        let buttons = Array.from(document.getElementsByClassName('button'));
+        buttons.map(button => {button.addEventListener('click',(e) => {
+            switch(e.target.innerText){
+                case 'C': 
+                display.innerText = '';
+                 break;
+
+                 case 'DEL': 
+                 display.innerText = display.innerText.slice(0, -1);
+                 break;
+
+                 case 'SUQ': 
+        
+                 display.innerText=document.getElementById("bottons").value
+                 display.innerText= Math.sqrt(parseInt(display));
+                 document.getElementById("bottons").value =display.innerText
+
+
+                 break;
+
+                 case '=':
+                 try {
+                     display.innerText = eval(display.innerText);
+                 } catch{
+                        display.innerText = 'Invalid Expression!'
+                   }
+            
+                  break;
+                 default: 
+                 display.innerText += e.target.innerText;
+             }
+            }
+        )
+    }
+) 
+
+    </script>
+</body>
+
+</html>
